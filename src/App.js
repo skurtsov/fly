@@ -1,24 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Service from './components/service';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import TimeSet from './components/timeset';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import PlainChoose from './components/plain';
+import DateChoose from './components/date';
+import TimeChoose from './components/time';
+import DurationChoose from './components/duration';
+import Auth from './components/auth';
+import Dashboard from './components/dashboard';
+import { useState } from 'react';
+import TimeBuilding from './components/timebuilding';
+import SignUp from './components/register';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [token , setToken]= useState('default')
+
+  return(
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Service token={token} />}/>
+        <Route path="/plane" element={<PlainChoose id={"mymy"}/>} />
+        <Route path="/date" element={<DateChoose id={"mymy"}/>} />
+        <Route path="/duration" element={<DurationChoose id={"mymy"}/>} />
+        <Route path="/time" element={<TimeChoose id={"mymy"}/>} />
+        <Route path="/auth" element={<Auth setToken={setToken} id={"mymy"}/>} />
+        <Route path="/dashboard" element={<Dashboard token={token} id={"mymy"}/>} />
+        <Route path="/timebuilding" element={<TimeBuilding token={token} id={"mymy"}/>} />
+        <Route path="/signup" element={<SignUp token={token} id={"mymy"}/>} />
+
+
+
+
+
+      </Routes>
+    </BrowserRouter>
+  </LocalizationProvider>
   );
 }
 

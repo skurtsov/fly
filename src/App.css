@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+.nextbtn {
+  color: blue;
+  text-decoration: none;
+  width: 80%;
+  border: 1px solid blue;
+  padding: 10px;
+  position: absolute;
+  bottom: 60%;
+  left: 7%;
+  text-align: center;
+  border-radius: 30px;
+}
+.timebuildingbtn{
+  color: blue;
+  text-decoration: none;
+  width: 80%;
+  border: 1px solid blue;
+  padding: 10px;
+  position: absolute;
+  bottom: 40%;
+  left: 7%;
+  text-align: center;
+  border-radius: 30px;
+}
+.loginform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loginform input  {
+  width: 80%;
+  border:1px solid blue;
+  margin-top: 10px;
+}
