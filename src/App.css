@@ -142,3 +142,17 @@
   border-radius: 18px;
   top: 10px;
 }
+.card {
+  color: #000;
+  text-decoration: none;
+  border: 1px solid black;
+  margin-bottom: 13px;
+  width: 95%;
+  text-align: center;
+}
+.adddate {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 140px;
+  font-size: 74px;
+}

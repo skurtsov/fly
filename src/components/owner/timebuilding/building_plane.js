@@ -5,7 +5,7 @@ import { renderTimeViewClock } from '@mui/x-date-pickers/timeViewRenderers';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Select from 'react-select'
-const PlainChoose = (props) => {
+const BuildingPlainChoose = (props) => {
     const [plane,setPlane]=useState('');
     const params = new URLSearchParams(window.location.search);
     const [schoold_id,setSchool_id]=useState('')
@@ -54,8 +54,8 @@ const PlainChoose = (props) => {
             <div>
                 <h2>Choose plane: {myplains[0]}</h2>
                 <Select options={options} onChange={(qq)=>setPlane(qq)}/>
-             <Link className="nextbtn" to={"/date?plane="+plane.value+"&id="+schoold_id+"&token="+token}>Next step</Link>
+             <Link className="nextbtn" to={"/buildingdate?plane="+plane.value+"&id="+schoold_id+"&token="+token}>Next step</Link>
             </div>
         );
 }
-export default PlainChoose
+export default BuildingPlainChoose

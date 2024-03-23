@@ -18,6 +18,8 @@ import Reservation from './components/reservation';
 import GetUserInfo from './components/owner/getuserinfo';
 import PlaneOwner from './components/owner/planesowner';
 import BuildingStart from './components/owner/timebuilding/building_start';
+import BuildingPlainChoose from './components/owner/timebuilding/building_plane';
+import BuildingDate from './components/owner/timebuilding/building_date';
 
 function App() {
   const [token , setToken]= useState('default')
@@ -38,8 +40,12 @@ function App() {
         <Route path="/reservation" element={<Reservation token={token} id={"mymy"}/>} />
         <Route path="/userdetails" element={<GetUserInfo token={token} id={"mymy"}/>} />
         <Route path="/planeowner" element={<PlaneOwner token={token} id={"mymy"}/>} />
+        {/* Time Building */}
         <Route path="/buildingstart" element={<BuildingStart token={token} id={"mymy"}/>} />
+        <Route path="/buildingplanechoose" element={<BuildingPlainChoose token={token} id={"mymy"}/>} />
+        <Route path="/buildingdate" element={<BuildingDate token={token} id={"mymy"}/>} />
 
+       
 
 
 
