@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 
 let Service =(props)=>{
-    const [schoold_id,setSchool_id]=useState("0")
+    const [school_id,setSchool_id]=useState("0")
     const [token,setToken]=useState('')
     useEffect(( ) => {
 
@@ -18,19 +18,28 @@ let Service =(props)=>{
          }, []);
 
          return(
-         <div>
+       <div>  
               <h1>token{token}</h1>
-
-            <Link className="nextbtn" to="/plane">discovery fly</Link>
-            <Link
+              <div className="BtnContainer">
+              <Link className="nextbtn" to={`/plane?id=${school_id}`}>discovery fly</Link>
+              <Link
   className="timebuildingbtn"
   to={{
-    pathname: token === 'default' ? '/auth' : '/timebuilding',
+    pathname: token === 'default' || token === null ? '/auth' : '/buildingstart',
+    search: token && token !== 'default' ? `?token=${encodeURIComponent(token)}` : '',
     state: { testvalue: "hello" },
   }}
 >
   Time Building
-</Link>            </div>
+</Link>
+
+ 
+<Link className="nextbtn" to="/auth">Sign In</Link>
+
+<Link className="nextbtn" to="/signup">Register</Link>
+        </div>
+        </div>
+
          );
 }
 export default Service;

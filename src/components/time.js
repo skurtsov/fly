@@ -11,6 +11,7 @@ const TimeChoose = (props) => {
   const params = new URLSearchParams(urlSearchString);
   const [myplane, setPlane] = useState(params.get('plane'));
   const [price, setPrice] = useState(params.get('price'));
+  const [token, setToken] = useState(params.get('token'));
   const [serviceDate, setServiceDate] = useState(params.get('date'));
   const [dur, setDur] = useState(parseInt(params.get('duration')));
 
@@ -27,8 +28,8 @@ const TimeChoose = (props) => {
     // Вывод результата
     try {
       const formattedPrevEndTime = newEndTime.format('HH:mm');
-      console.log("http://localhost/fly/index.php?service=discovery+fly&starttime="+startTime.format('HH:mm')+"&endtime="+formattedPrevEndTime+"&flydate="+ serviceDate+"&duration=20&plain="+myplane+"&schoolId=1&clientName=Simon&email=mymail&tel=612222062");
-      await axios.get("http://localhost/fly/index.php?service=discovery+fly&starttime="+startTime.format('HH:mm')+"&endtime="+formattedPrevEndTime+"&flydate="+ serviceDate+"&duration=20&plain="+myplane+"&schoolId=1&clientName=Simon&email=mymail&tel=612222062");
+      console.log("http://localhost/test/registerfly.php?service=discovery+fly&starttime="+startTime.format('HH:mm')+"&endtime="+formattedPrevEndTime+"&flydate="+ serviceDate+"&duration=20&plain="+myplane+"&schoolId=1&clientName=Simon&email=mymail&tel=612222062");
+      await axios.get("http://localhost/test/registerfly.php?service=discovery+fly&starttime="+startTime.format('HH:mm')+"&endtime="+formattedPrevEndTime+"&flydate="+ serviceDate+"&duration=20&plain="+myplane+"&schoolId=1&clientName=Simon&email=mymail&tel=612222062");
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -73,7 +74,7 @@ const TimeChoose = (props) => {
           seconds: renderTimeViewClock,
         }}
       />
-      <div className="nextbtn" onClick={checkReserve}>
+      <div className="nextbtn" onClick={sendinfo}>
         Reservate
       </div>
     </div>

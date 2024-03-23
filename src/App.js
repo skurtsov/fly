@@ -14,6 +14,11 @@ import Dashboard from './components/dashboard';
 import { useState } from 'react';
 import TimeBuilding from './components/timebuilding';
 import SignUp from './components/register';
+import Reservation from './components/reservation';
+import GetUserInfo from './components/owner/getuserinfo';
+import PlaneOwner from './components/owner/planesowner';
+import BuildingStart from './components/owner/timebuilding/building_start';
+
 function App() {
   const [token , setToken]= useState('default')
 
@@ -30,6 +35,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard token={token} id={"mymy"}/>} />
         <Route path="/timebuilding" element={<TimeBuilding token={token} id={"mymy"}/>} />
         <Route path="/signup" element={<SignUp token={token} id={"mymy"}/>} />
+        <Route path="/reservation" element={<Reservation token={token} id={"mymy"}/>} />
+        <Route path="/userdetails" element={<GetUserInfo token={token} id={"mymy"}/>} />
+        <Route path="/planeowner" element={<PlaneOwner token={token} id={"mymy"}/>} />
+        <Route path="/buildingstart" element={<BuildingStart token={token} id={"mymy"}/>} />
 
 
 
